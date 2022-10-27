@@ -56,7 +56,7 @@ function SolvedScreen() {
 
   let levelname = level();
 
-  if (isSolved) {
+  
     return (
       <div className='solvedCardContainer'>
         <div className='solvedCardWrapper'>
@@ -103,7 +103,6 @@ function SolvedScreen() {
       </div>
     );
   }
-  return <></>;
-}
+
 
 export default SolvedScreen;
