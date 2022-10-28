@@ -142,7 +142,7 @@ body {
 .solvedCardButtonWrapper .dropdown-btn {
   height: 35px;
   margin: 10px 2px 0px 2px;
-  width: 70px;
+  width: 85px;
   font-size: 1rem;
 }
 
@@ -550,6 +550,11 @@ input:checked + .slider2::before {
 }
 
 @media screen and (max-width: 920px) {
+  .solvedCardButtonWrapper .dropdown-btn{
+    width: 85px;
+    margin:0px 5px;
+  }
+  
   .title h1{
     margin: 5px;
   }
@@ -629,6 +634,7 @@ input:checked + .slider2::before {
 }
 
 @media (max-width: 600px) {
+  
   .BoardAndControllerWrap {
     align-items: center;
   }
