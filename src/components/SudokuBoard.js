@@ -39,7 +39,7 @@ function Board(props) {
         checkSolution(hintsFromControls);
         break;
       case (e.keyCode === 46 || e.keyCode === 8) &&
-        currentBox.innerText != liveBoard[idx]:
+        currentBox.innerText !== liveBoard[idx]:
         document.getElementsByClassName('SudokuBlock')[idx].innerText = '';
         break;
 

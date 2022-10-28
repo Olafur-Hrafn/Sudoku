@@ -51,10 +51,7 @@ function App() {
         </div>
 
         <div className=''>
-         { isSolved
-          ?<SolvedScreen />
-          :<></>
-         }
+          <SolvedScreen />
           <div className='sudokuBoardWrapper'>
             <div>
               <SudokuBoard />

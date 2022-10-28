@@ -207,6 +207,7 @@ function SudokuBoard() {
   useEffect(() => {
     boardLevel();
   }, [solvedBoard]);
+  
 
   return <></>;
 }
