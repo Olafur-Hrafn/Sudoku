@@ -108,7 +108,7 @@ function Board(props) {
 
     if (JSON.stringify(TempSolvedBoard) === JSON.stringify(xAnwser)) {
       SetHintCounter(hintsFromControls);
-      SetIsSolved((current) => !current);
+      //SetIsSolved((current) => !current);
     }
   }
 

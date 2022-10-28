@@ -37,7 +37,7 @@ function SolvedScreen() {
 
     if (isSolved) {
       SetSolvedBoard([]);
-      SetIsSolved((current) => !current);
+      SetIsSolved(false);
     }
   }
 
