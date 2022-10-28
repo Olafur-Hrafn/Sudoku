@@ -21,6 +21,7 @@ const Timer = () => {
       SetScoreCard({ time: time });
     }
     return () => clearInterval(interval);
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSolved]);
 
   useEffect(() => {

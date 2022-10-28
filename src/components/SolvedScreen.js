@@ -56,11 +56,9 @@ function SolvedScreen() {
   let levelname = level();
 
   let cardRender = () => {
-    if (!isSolved) {
-      return null;
-    } else
+    
       return (
-        <div className='solvedCardContainer'>
+        <div className='solvedCardContainer' style={{ display: isSolved ? '': 'none'}}>
           <div className='solvedCardWrapper'>
             <h1>Congratulations</h1>
             <h2>You solved the puzzle</h2>
