@@ -58,7 +58,7 @@ function SolvedScreen() {
   let cardRender = () => {
     
       return (
-        <div className='solvedCardContainer' style={{ display: isSolved ? '': 'none'}}>
+        <div className='solvedCardContainer' style={{ display: isSolved ? 'inline': 'none'}}>
           <div className='solvedCardWrapper'>
             <h1>Congratulations</h1>
             <h2>You solved the puzzle</h2>
