@@ -87,6 +87,7 @@ function Board(props) {
 
   function checkSolution(hints) {
     // check if player has soulution right
+    
     hintsFromControls = hints;
 
     let TempSolvedBoard = solvedBoard;
@@ -109,6 +110,9 @@ function Board(props) {
     if (JSON.stringify(TempSolvedBoard) === JSON.stringify(xAnwser)) {
       SetHintCounter(hintsFromControls);
       //SetIsSolved((current) => !current);
+    }
+    if(JSON.stringify(TempSolvedBoard) === JSON.stringify(xAnwser)){
+      SetIsSolved((current) => !current);
     }
   }
 
