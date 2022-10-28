@@ -109,13 +109,25 @@ function Board(props) {
 
     if (JSON.stringify(TempSolvedBoard) === JSON.stringify(xAnwser)) {
       SetHintCounter(hintsFromControls);
+      return true
+      
       //SetIsSolved((current) => !current);
-    }
-    if(JSON.stringify(TempSolvedBoard) === JSON.stringify(xAnwser)){
-      SetIsSolved((current) => !current);
-    }
+    }else 
+    //if(JSON.stringify(TempSolvedBoard) === JSON.stringify(xAnwser)){
+    //  SetIsSolved((current) => !current);
+    //}
+    return false;
   }
 
+  useEffect(() => {
+    console.log(checkSolution())
+    if(checkSolution()){
+      SetIsSolved(true)
+    } else {
+      SetIsSolved(false)
+    }
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[checkSolution()]);
   useEffect(() => {
     if(!isSolved){checkSolution();}
   },);
