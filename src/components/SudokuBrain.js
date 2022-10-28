@@ -148,7 +148,7 @@ function SudokuBoard() {
   }
 
   function boardLevel() {
-    let tempBoard = Array.from(solvedBoard);
+    //let tempBoard = Array.from(solvedBoard);
     let newBoard = JSON.parse(JSON.stringify(solvedBoard));
 
     if (difficultyLevel === 1) {
@@ -199,13 +199,15 @@ function SudokuBoard() {
 
     SetCurrentBoard([...newBoard]);
   }
-
+  
   useEffect(() => {
     generateBoard();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [difficultyLevel]);
 
   useEffect(() => {
     boardLevel();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [solvedBoard]);
   
 

@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { UserContext } from '../userContext';
 
 const ThemeSlider = () => {
-  const { theme, setTheme, hintCounter,
-    SetHintCounter } =
+  const { theme, setTheme } =
   useContext(UserContext);
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';

@@ -4,7 +4,7 @@ import './styles.css';
 import Controls from '../components/Controls';
 
 function Board(props) {
-  const { solvedBoard, currentBoard, SetIsSolved, SetHintCounter } =
+  const { solvedBoard, currentBoard,isSolved, SetIsSolved, SetHintCounter } =
     useContext(UserContext);
   const [hintsCount, SetHintsCount] = useState(0);
 
@@ -113,15 +113,15 @@ function Board(props) {
   }
 
   useEffect(() => {
-    checkSolution();
-  }, []);
+    if(!isSolved){checkSolution();}
+  },);
 
   useEffect(() => {
     if (liveBoard.length > 1) {
       refs.current = document.getElementsByClassName('SudokuBlock')[2];
       refs.current.focus();
     }
-  }, [liveBoard]);
+  }, );
 
   return (
     <div className='BoardAndControllerWrap'>
