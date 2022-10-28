@@ -19,7 +19,7 @@ function SolvedScreen() {
     scoreCard,
   } = useContext(UserContext);
 
-  let hint = localStorage.getItem ("hintCounter")
+  let hint = localStorage.getItem('hintCounter');
 
   async function newGame(e) {
     let lvl = parseInt(e.target.value);
@@ -56,59 +56,57 @@ function SolvedScreen() {
   let levelname = level();
 
   let cardRender = () => {
-    if(isSolved){
-      return <div className='solvedCardContainer'>
-      <div className='solvedCardWrapper'>
-        <h1>Congratulations</h1>
-        <h2>You solved the puzzle</h2>
-        <div className='scores'>
-          <div className='time'>
-            <span className='solvedCardTime'>
-              <FontAwesomeIcon icon={faStopwatch} />
-              Time:{' '}
-              {('0' + Math.floor((scoreCard.time / 60000) % 60)).slice(-2)}:
-            </span>
-            <span className='solvedCardTime'>
-              {('0' + Math.floor((scoreCard.time / 1000) % 60)).slice(-2)}
-            </span>
-          </div>
-          <div className='hints'>
-            <span>
-              <FontAwesomeIcon icon={faLightbulb} /> Hints: {hint}
-            </span>
-          </div>
-          <div className='lvlName'>
-            <span>
-              <FontAwesomeIcon icon={faBrain} />
-              Level:{levelname}
-            </span>
-          </div>
-          <h2 className='solvedH2Text'>
-            <div className='playAgain'>Play again</div>
-          </h2>
-          <div className='solvedCardButtonWrapper'>
-            <button value='1' className='dropdown-btn' onClick={newGame}>
-              Easy
-            </button>
-            <button value='2' className='dropdown-btn' onClick={newGame}>
-              Medium
-            </button>
-            <button value='3' className='dropdown-btn' onClick={newGame}>
-              Hard
-            </button>
+    if (!isSolved) {
+      return null;
+    } else
+      return (
+        <div className='solvedCardContainer'>
+          <div className='solvedCardWrapper'>
+            <h1>Congratulations</h1>
+            <h2>You solved the puzzle</h2>
+            <div className='scores'>
+              <div className='time'>
+                <span className='solvedCardTime'>
+                  <FontAwesomeIcon icon={faStopwatch} />
+                  Time:{' '}
+                  {('0' + Math.floor((scoreCard.time / 60000) % 60)).slice(-2)}:
+                </span>
+                <span className='solvedCardTime'>
+                  {('0' + Math.floor((scoreCard.time / 1000) % 60)).slice(-2)}
+                </span>
+              </div>
+              <div className='hints'>
+                <span>
+                  <FontAwesomeIcon icon={faLightbulb} /> Hints: {hint}
+                </span>
+              </div>
+              <div className='lvlName'>
+                <span>
+                  <FontAwesomeIcon icon={faBrain} />
+                  Level:{levelname}
+                </span>
+              </div>
+              <h2 className='solvedH2Text'>
+                <div className='playAgain'>Play again</div>
+              </h2>
+              <div className='solvedCardButtonWrapper'>
+                <button value='1' className='dropdown-btn' onClick={newGame}>
+                  Easy
+                </button>
+                <button value='2' className='dropdown-btn' onClick={newGame}>
+                  Medium
+                </button>
+                <button value='3' className='dropdown-btn' onClick={newGame}>
+                  Hard
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    } else return <></>;
-  }
+      );
+  };
   let card = cardRender();
-    return (
-      <>
-        {card}
-      </>
-    );
-  
+  return <>{card}</>;
 }
 
 export default SolvedScreen;
