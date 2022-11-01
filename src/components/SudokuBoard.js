@@ -120,7 +120,6 @@ function Board(props) {
   }
 
   useEffect(() => {
-    console.log(checkSolution())
     if(checkSolution()){
       SetIsSolved(true)
     } else {
