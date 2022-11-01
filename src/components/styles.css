@@ -651,7 +651,7 @@ input:checked + .slider2::before {
 
 @media (max-width: 450px) {
   .BoardContainer {
-    height: 385px;
+    height: 100%;
     width: 355px;
     margin-right: 0px;
   }
